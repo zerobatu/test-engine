@@ -1,0 +1,33 @@
+<h1>Listing postulation_processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Description</th>
+      <th>Salary</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postulation_processes.each do |postulation_process| %>
+      <tr>
+        <td><%= postulation_process.name %></td>
+        <td><%= postulation_process.place %></td>
+        <td><%= postulation_process.description %></td>
+        <td><%= postulation_process.salary %></td>
+        <td><%= link_to 'Show', postulation_process %></td>
+        <td><%= link_to 'Edit', edit_postulation_process_path(postulation_process) %></td>
+        <td><%= link_to 'Destroy', postulation_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postulation process', new_postulation_process_path %>
